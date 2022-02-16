@@ -1,25 +1,24 @@
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import Home from "./pages/Home";
+import Search from "./pages/Search";
+import {Route, Routes} from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+
+    const [appList, setAppList] = useState([])
+    const updateAppList = list => setAppList(list)
+
+    return (
+        <Routes>
+            <Route exact path='/' element={
+                <Home updateAppList={updateAppList} trace="home"/>
+            }/>
+            <Route exact path='/search' element={
+                <Search appList={appList} trace="search"/>
+            }/>
+        </Routes>
+    )
 }
 
 export default App;
