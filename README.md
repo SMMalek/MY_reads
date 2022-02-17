@@ -1,8 +1,6 @@
 # Project Name and Description
 
-Name: My Reads
-
-Project for Udacity Web Developing Course.
+Name: **My Reads**
 
 Project is A book Library with three Shelves you can move books between shelves, remove them from shelves or 
 add them through search page.
