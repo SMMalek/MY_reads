@@ -2,7 +2,6 @@ import React, {useEffect, useState} from "react";
 import '../App.css'
 import PropTypes from "prop-types";
 
-
 const BookShelfChanger = (props) => {
 
     const [selected, setSelected] = useState(props.book.shelf)
@@ -11,34 +10,61 @@ const BookShelfChanger = (props) => {
     const [disableR, setDisableR] = useState(false)
     const [disableN, setDisableN] = useState(false)
 
-
     const seeDisabled = () => {
-        if (selected === "currentlyReading") {
-            setDisableCR(true)
-            setDisableWR(false)
-            setDisableR(false)
-            setDisableN(false)
-        } else {
-            if (selected === "wantToRead") {
-                setDisableCR(false)
-                setDisableWR(true)
-                setDisableR(false)
-                setDisableN(false)
-            } else {
-                if (selected === "read") {
-                    setDisableCR(false)
-                    setDisableWR(false)
-                    setDisableR(true)
-                    setDisableN(false)
-                } else {
-                    setDisableCR(false)
-                    setDisableWR(false)
-                    setDisableR(false)
-                    setDisableN(true)
-                }
-            }
-        }
-    }
+      switch (selected) {
+        case 'currentlyReading':
+        setDisableCR(true)
+        setDisableWR(false)
+        setDisableR(false)
+        setDisableN(false)
+          break;
+        case 'wantToRead':
+        setDisableCR(false)
+        setDisableWR(true)
+        setDisableR(false)
+        setDisableN(false)
+          break;
+        case 'read':
+        setDisableCR(false)
+        setDisableWR(false)
+        setDisableR(true)
+        setDisableN(false)
+          break;
+        default:
+        setDisableCR(false)
+        setDisableWR(false)
+        setDisableR(false)
+        setDisableN(true)
+          }
+}
+
+    // const seeDisabled = () => {
+    //     if (selected === "currentlyReading") {
+    //         setDisableCR(true)
+    //         setDisableWR(false)
+    //         setDisableR(false)
+    //         setDisableN(false)
+    //     } else {
+    //         if (selected === "wantToRead") {
+    //             setDisableCR(false)
+    //             setDisableWR(true)
+    //             setDisableR(false)
+    //             setDisableN(false)
+    //         } else {
+    //             if (selected === "read") {
+    //                 setDisableCR(false)
+    //                 setDisableWR(false)
+    //                 setDisableR(true)
+    //                 setDisableN(false)
+    //             } else {
+    //                 setDisableCR(false)
+    //                 setDisableWR(false)
+    //                 setDisableR(false)
+    //                 setDisableN(true)
+    //             }
+    //         }
+    //     }
+    // }
 
     const handleSelect = selectedOption => {
         setSelected(selectedOption.target.value)
