@@ -38,34 +38,6 @@ const BookShelfChanger = (props) => {
           }
 }
 
-    // const seeDisabled = () => {
-    //     if (selected === "currentlyReading") {
-    //         setDisableCR(true)
-    //         setDisableWR(false)
-    //         setDisableR(false)
-    //         setDisableN(false)
-    //     } else {
-    //         if (selected === "wantToRead") {
-    //             setDisableCR(false)
-    //             setDisableWR(true)
-    //             setDisableR(false)
-    //             setDisableN(false)
-    //         } else {
-    //             if (selected === "read") {
-    //                 setDisableCR(false)
-    //                 setDisableWR(false)
-    //                 setDisableR(true)
-    //                 setDisableN(false)
-    //             } else {
-    //                 setDisableCR(false)
-    //                 setDisableWR(false)
-    //                 setDisableR(false)
-    //                 setDisableN(true)
-    //             }
-    //         }
-    //     }
-    // }
-
     const handleSelect = selectedOption => {
         setSelected(selectedOption.target.value)
         if (props.trace === "search" && selectedOption.target.value !== "none") {
